@@ -18,79 +18,191 @@
     <item>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <widget class="QTableWidget" name="tableWidget"/>
-      </item>
-      <item row="1" column="0">
-       <layout class="QFormLayout" name="formLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
+       <layout class="QHBoxLayout" name="searchLayout">
+        <item>
+         <widget class="QLabel" name="label_search">
           <property name="text">
-           <string>學號:</string>
+           <string>搜尋:</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>班級:</string>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_search">
+          <property name="placeholderText">
+           <string>輸入關鍵字搜尋聯絡人...</string>
+          </property>
+          <property name="toolTip">
+           <string>可搜尋學號、班級、姓名或電話</string>
           </property>
          </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>姓名:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_2"/>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_3"/>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>電話:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_4"/>
         </item>
        </layout>
       </item>
+      <item row="1" column="0">
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="toolTip">
+         <string>聯絡人列表 - 點擊欄位標題可排序</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="0">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>聯絡人資訊</string>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>學號:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="placeholderText">
+            <string>請輸入學號</string>
+           </property>
+           <property name="toolTip">
+            <string>必填欄位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>班級:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_2">
+           <property name="placeholderText">
+            <string>請輸入班級</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>姓名:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_3">
+           <property name="placeholderText">
+            <string>請輸入姓名</string>
+           </property>
+           <property name="toolTip">
+            <string>必填欄位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>電話:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="lineEdit_4">
+           <property name="placeholderText">
+            <string>請輸入電話號碼</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="0">
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
          <widget class="QPushButton" name="pushButton">
           <property name="text">
            <string>新增</string>
           </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="text">
-           <string>匯入</string>
+          <property name="toolTip">
+           <string>新增聯絡人 (Enter)</string>
+          </property>
+          <property name="shortcut">
+           <string>Return</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="3">
-         <widget class="QPushButton" name="pushButton_4">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="pushButton_edit">
           <property name="text">
-           <string>結束</string>
+           <string>編輯</string>
+          </property>
+          <property name="toolTip">
+           <string>編輯選取的聯絡人</string>
           </property>
          </widget>
         </item>
         <item row="0" column="2">
+         <widget class="QPushButton" name="pushButton_delete">
+          <property name="text">
+           <string>刪除</string>
+          </property>
+          <property name="toolTip">
+           <string>刪除選取的聯絡人 (Del)</string>
+          </property>
+          <property name="shortcut">
+           <string>Del</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="pushButton_clear">
+          <property name="text">
+           <string>清除</string>
+          </property>
+          <property name="toolTip">
+           <string>清除輸入欄位 (Esc)</string>
+          </property>
+          <property name="shortcut">
+           <string>Esc</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>匯入</string>
+          </property>
+          <property name="toolTip">
+           <string>從檔案匯入聯絡人 (Ctrl+O)</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+O</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
          <widget class="QPushButton" name="pushButton_2">
           <property name="text">
            <string>匯出</string>
+          </property>
+          <property name="toolTip">
+           <string>匯出聯絡人到檔案 (Ctrl+S)</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+S</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>結束</string>
+          </property>
+          <property name="toolTip">
+           <string>結束程式 (Ctrl+Q)</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+Q</string>
           </property>
          </widget>
         </item>

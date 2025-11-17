@@ -1,9 +1,13 @@
 #include "mycontactbook.h"
 #include "ui_mycontactbook.h"
+#include<QTableWidget>
 #include<QFile>
 #include<QDebug>
+#include<QTextStream>
+#include <QFileDialog>
 
-QString mFilename ="C:/test/myfile.txt";
+
+QString mFilename ="C:/Users/user/Desktop/ex/contackbook.txt";
 void Write (QString Filename, QString str)
 {
     QFile mFile (Filename); //宣告QFile函數
@@ -53,10 +57,59 @@ void MyContactBook::on_pushButton_2_clicked()
     //存福內容
     for(int i = 0 ;i<ui->tableWidget->rowCount();i++){
         for(int j = 0 ;j<ui->tableWidget->columnCount();j++) {
-            saveFile+=ui->tableWidget->item(i,j)->text()+",";
+            saveFile+=ui->tableWidget->item(i,j)->text();
+            if(!(j>=ui->tableWidget->columnCount() - 1))saveFile+=",";
+
         }
         saveFile+="\n";
     }
     Write (mFilename, saveFile); //呼叫Write
+}
+
+#include <QFileDialog>
+
+void MyContactBook::on_pushButton_3_clicked()
+{
+    // Open a file dialog to let the user choose a file to import
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Contact File"), "", tr("Text Files (*.txt);;CSV Files (*.csv)"));
+
+    // If the user cancels or doesn't select a file, return early
+    if (fileName.isEmpty()) {
+        return;
+    }
+
+    // Open the selected file
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open file for reading:" << fileName;
+        return;
+    }
+
+    ui->tableWidget->setRowCount(0);
+
+    QTextStream in(&file);
+    QString line;
+
+    while (!in.atEnd()) {
+        line = in.readLine();
+        QStringList fields = line.split(",");
+        if (fields.size() == 4) {
+            int row = ui->tableWidget->rowCount();
+            ui->tableWidget->insertRow(row);
+            for (int col = 0; col < fields.size(); ++col) {
+                ui->tableWidget->setItem(row, col, new QTableWidgetItem(fields.at(col)));
+            }
+        }
+    }
+
+    // Close the file
+    file.close();
+}
+
+
+
+void MyContactBook::on_pushButton_4_clicked()
+{
+    QApplication::quit();
 }
 

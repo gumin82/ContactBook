@@ -17,6 +17,11 @@ public:
     MyContactBook(QWidget *parent = nullptr);
     ~MyContactBook();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MyContactBook *ui;
 };

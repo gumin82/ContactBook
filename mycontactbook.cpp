@@ -28,7 +28,7 @@ MyContactBook::MyContactBook(QWidget *parent)
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget->setAlternatingRowColors(true);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->tableWidget->setEditTriggers(QAbstractItemView::DoubleClick);
+    ui->tableWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
 }
 
 MyContactBook::~MyContactBook()

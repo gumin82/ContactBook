@@ -70,15 +70,12 @@ void MyContactBook::on_pushButton_2_clicked()
 
 void MyContactBook::on_pushButton_3_clicked()
 {
-    // Open a file dialog to let the user choose a file to import
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Contact File"), "", tr("Text Files (*.txt);;CSV Files (*.csv)"));
 
-    // If the user cancels or doesn't select a file, return early
     if (fileName.isEmpty()) {
         return;
     }
 
-    // Open the selected file
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
         qDebug() << "Could not open file for reading:" << fileName;

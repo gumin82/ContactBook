@@ -15,6 +15,21 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>15</number>
+    </property>
+    <property name="topMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>15</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
     <item>
      <widget class="QTableWidget" name="tableWidget">
       <property name="editTriggers">
@@ -39,6 +54,24 @@
       <layout class="QFormLayout" name="formLayout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="horizontalSpacing">
+        <number>15</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>12</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
@@ -101,16 +134,19 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
       <item>
        <widget class="QPushButton" name="addButton">
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>新增</string>
+         <string>➕ 新增</string>
         </property>
         <property name="toolTip">
          <string>新增聯絡人</string>
@@ -122,11 +158,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>編輯</string>
+         <string>✏️ 編輯</string>
         </property>
         <property name="toolTip">
          <string>編輯選中的聯絡人</string>
@@ -138,11 +174,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>刪除</string>
+         <string>🗑️ 刪除</string>
         </property>
         <property name="toolTip">
          <string>刪除選中的聯絡人</string>
@@ -154,11 +190,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>清除</string>
+         <string>🧹 清除</string>
         </property>
         <property name="toolTip">
          <string>清除輸入表單</string>
@@ -170,11 +206,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>搜尋</string>
+         <string>🔍 搜尋</string>
         </property>
         <property name="toolTip">
          <string>搜尋聯絡人（在姓名欄輸入關鍵字）</string>
@@ -186,11 +222,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>匯入</string>
+         <string>📥 匯入</string>
         </property>
         <property name="toolTip">
          <string>從檔案匯入聯絡人</string>
@@ -202,11 +238,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>匯出</string>
+         <string>📤 匯出</string>
         </property>
         <property name="toolTip">
          <string>匯出聯絡人至檔案</string>
@@ -218,11 +254,11 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>35</height>
+          <height>40</height>
          </size>
         </property>
         <property name="text">
-         <string>結束</string>
+         <string>🚪 結束</string>
         </property>
         <property name="toolTip">
          <string>結束程式</string>

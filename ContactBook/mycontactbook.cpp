@@ -16,14 +16,14 @@ MyContactBook::MyContactBook(QWidget *parent)
 {
     ui->setupUi(this);
     
-    // 設定視窗標題
-    setWindowTitle(QStringLiteral("聯絡人管理系統"));
+    // 設定視窗標題和圖示
+    setWindowTitle(QStringLiteral("📇 聯絡人管理系統"));
     
     // 設定表格
     QStringList colTitles;
     ui->tableWidget->setColumnCount(4);
-    colTitles << QStringLiteral("學號") << QStringLiteral("班級") 
-              << QStringLiteral("姓名") << QStringLiteral("電話");
+    colTitles << QStringLiteral("📚 學號") << QStringLiteral("🏫 班級") 
+              << QStringLiteral("👤 姓名") << QStringLiteral("📞 電話");
     ui->tableWidget->setHorizontalHeaderLabels(colTitles);
     
     // 設定表格屬性
@@ -31,13 +31,23 @@ MyContactBook::MyContactBook(QWidget *parent)
     ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->tableWidget->setAlternatingRowColors(true);
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->tableWidget->horizontalHeader()->setDefaultAlignment(Qt::AlignCenter);
+    
+    // 設定列高
+    ui->tableWidget->verticalHeader()->setDefaultSectionSize(35);
+    
+    // 設定欄寬
+    ui->tableWidget->setColumnWidth(0, 120);
+    ui->tableWidget->setColumnWidth(1, 120);
+    ui->tableWidget->setColumnWidth(2, 150);
+    ui->tableWidget->setColumnWidth(3, 150);
     
     // 設定預設檔案路徑
     QString documentsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     mFilename = documentsPath + "/contactbook.txt";
     
     // 顯示歡迎訊息
-    updateStatusBar(QStringLiteral("歡迎使用聯絡人管理系統"));
+    updateStatusBar(QStringLiteral("✨ 歡迎使用聯絡人管理系統！"));
 }
 
 MyContactBook::~MyContactBook()
